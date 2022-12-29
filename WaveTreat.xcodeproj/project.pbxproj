@@ -16,6 +16,7 @@
 		FD4799E3295D358E00CCD0C2 /* WaveTreatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4799E2295D358E00CCD0C2 /* WaveTreatTests.swift */; };
 		FD4799ED295D358E00CCD0C2 /* WaveTreatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4799EC295D358E00CCD0C2 /* WaveTreatUITests.swift */; };
 		FD4799EF295D358E00CCD0C2 /* WaveTreatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4799EE295D358E00CCD0C2 /* WaveTreatUITestsLaunchTests.swift */; };
+		FD4799FD295D35CC00CCD0C2 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4799FC295D35CC00CCD0C2 /* WaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FD4799E8295D358E00CCD0C2 /* WaveTreatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaveTreatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4799EC295D358E00CCD0C2 /* WaveTreatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTreatUITests.swift; sourceTree = "<group>"; };
 		FD4799EE295D358E00CCD0C2 /* WaveTreatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTreatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD4799FC295D35CC00CCD0C2 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		FD4799CA295D358D00CCD0C2 /* WaveTreat */ = {
 			isa = PBXGroup;
 			children = (
+				FD4799FB295D35C100CCD0C2 /* Views */,
 				FD4799CB295D358D00CCD0C2 /* AppDelegate.swift */,
 				FD4799CD295D358D00CCD0C2 /* SceneDelegate.swift */,
 				FD4799CF295D358D00CCD0C2 /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				FD4799EE295D358E00CCD0C2 /* WaveTreatUITestsLaunchTests.swift */,
 			);
 			path = WaveTreatUITests;
+			sourceTree = "<group>";
+		};
+		FD4799FB295D35C100CCD0C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD4799FC295D35CC00CCD0C2 /* WaveView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				FD4799D0295D358D00CCD0C2 /* ViewController.swift in Sources */,
 				FD4799CC295D358D00CCD0C2 /* AppDelegate.swift in Sources */,
 				FD4799CE295D358D00CCD0C2 /* SceneDelegate.swift in Sources */,
+				FD4799FD295D35CC00CCD0C2 /* WaveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
