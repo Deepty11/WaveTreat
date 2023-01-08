@@ -13,7 +13,7 @@ class WaveView: UIView{
         case right
         case left
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         createLabel()
@@ -36,6 +36,16 @@ class WaveView: UIView{
     var phase = 0.0
     
     var preferredColor = UIColor.systemCyan
+    
+    private var label: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18.0)
+        label.textColor = .orange
+        label.text = "What a wave !! 🌊"
+        label.textAlignment = .center
+        
+        return label
+    }()
     
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
@@ -73,20 +83,13 @@ class WaveView: UIView{
     }
     
     func createLabel(){
-        let label = UILabel(frame: CGRect(x: 10, y: 10, width: self.frame.width - 10, height: 20))
-        label.font = .boldSystemFont(ofSize: 18.0)
-        label.textColor = .orange
-        label.text = "What a wave!!"
-        label.textAlignment = .center
-        
         addSubview(label)
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            label.topAnchor.constraint(equalTo: self.topAnchor, constant: 300),
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 100)
-        ])
+        label.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            label.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
         
     }
 

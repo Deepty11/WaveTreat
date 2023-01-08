@@ -8,17 +8,40 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var waveView = WaveView()
     
+    private var newView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .orange
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let waveView = WaveView(frame: CGRect(x: 0, y: view.frame.height / 2, width: view.frame.width, height: view.frame.height / 2))
+        
         view.addSubview(waveView)
-        
-        
-        
+        activateConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        activateConstraints()
         
     }
+    
+    func activateConstraints(){
+        waveView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            waveView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            waveView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            waveView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            waveView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+            ])
+    
+    }
+
 
 
 }
