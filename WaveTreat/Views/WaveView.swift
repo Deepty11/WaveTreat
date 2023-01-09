@@ -47,9 +47,10 @@ class WaveView: UIView{
         return label
     }()
     
-    override func draw(_ rect: CGRect) {
+    override func layoutSubviews() {
         let path = UIBezierPath()
-        myLayer.frame = rect
+        myLayer.frame = bounds
+
 
         let width = Double(self.frame.width)
         let height = Double(self.frame.height)
@@ -79,8 +80,42 @@ class WaveView: UIView{
         myLayer.fillColor = preferredColor.cgColor
         myLayer.strokeColor = preferredColor.cgColor
         self.layer.addSublayer(myLayer)
-
     }
+    
+//    override func draw(_ rect: CGRect) {
+//        let path = UIBezierPath()
+//        myLayer.frame = rect
+//
+//        let width = Double(self.frame.width)
+//        let height = Double(self.frame.height)
+//
+//        let mid = height * 0.5
+//
+//        let waveLength = width / frequency
+//        let waveHeightCoef = Double(frequency)
+//
+//        path.move(to: CGPoint(x: 0, y: frame.maxY))
+//        path.addLine(to: CGPoint(x: 0, y: mid))
+//
+//        for x in stride(from: 0, to: width, by: 1){
+//            let actualX = x / waveLength
+//            let sine = -cos(parameterA * (actualX + phase)) * sin((actualX + phase)/parameterB)
+//
+//            let y = waveHeightCoef * sine + mid
+//
+//            path.addLine(to: CGPoint(x: x, y: y))
+//
+//        }
+//
+//        path.addLine(to: CGPoint(x: CGFloat(width), y: frame.maxY))
+//        path.addLine(to: CGPoint(x: 0, y: frame.maxY))
+//
+//        myLayer.path = path.cgPath
+//        myLayer.fillColor = preferredColor.cgColor
+//        myLayer.strokeColor = preferredColor.cgColor
+//        self.layer.addSublayer(myLayer)
+//
+//    }
     
     func createLabel(){
         addSubview(label)
